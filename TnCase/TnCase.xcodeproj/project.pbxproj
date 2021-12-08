@@ -15,6 +15,7 @@
 		22F0DE34275FF93A00EB1497 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22F0DE32275FF93A00EB1497 /* LaunchScreen.storyboard */; };
 		22F0DE3C275FFA3900EB1497 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F0DE3B275FFA3900EB1497 /* MovieViewModel.swift */; };
 		22F0DE3E275FFCF400EB1497 /* Network in Resources */ = {isa = PBXBuildFile; fileRef = 22F0DE3D275FFCF400EB1497 /* Network */; };
+		5FBCF9F9ED489A638613877D /* Pods_TnCase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8592C235C35F0EE7089B767A /* Pods_TnCase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		22F0DE35275FF93A00EB1497 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22F0DE3B275FFA3900EB1497 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		22F0DE3D275FFCF400EB1497 /* Network */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Network; sourceTree = "<group>"; };
+		367B5DE367CFB7669A0DF3C2 /* Pods-TnCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TnCase.release.xcconfig"; path = "Target Support Files/Pods-TnCase/Pods-TnCase.release.xcconfig"; sourceTree = "<group>"; };
+		534561FA50305A96D641242E /* Pods-TnCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TnCase.debug.xcconfig"; path = "Target Support Files/Pods-TnCase/Pods-TnCase.debug.xcconfig"; sourceTree = "<group>"; };
+		8592C235C35F0EE7089B767A /* Pods_TnCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TnCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FBCF9F9ED489A638613877D /* Pods_TnCase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				22F0DE26275FF93800EB1497 /* TnCase */,
 				22F0DE25275FF93800EB1497 /* Products */,
+				67BADD97BFDA76E8B16C1BE6 /* Pods */,
+				70EA1F95E3CDA1B3A39B7E45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +80,24 @@
 			path = TnCase;
 			sourceTree = "<group>";
 		};
+		67BADD97BFDA76E8B16C1BE6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				534561FA50305A96D641242E /* Pods-TnCase.debug.xcconfig */,
+				367B5DE367CFB7669A0DF3C2 /* Pods-TnCase.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		70EA1F95E3CDA1B3A39B7E45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8592C235C35F0EE7089B767A /* Pods_TnCase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22F0DE38275FF93A00EB1497 /* Build configuration list for PBXNativeTarget "TnCase" */;
 			buildPhases = (
+				A3BDAE74EA097E1DB597DF12 /* [CP] Check Pods Manifest.lock */,
 				22F0DE20275FF93800EB1497 /* Sources */,
 				22F0DE21275FF93800EB1497 /* Frameworks */,
 				22F0DE22275FF93800EB1497 /* Resources */,
+				9620F9447DDEE4B51F7A7CFD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +166,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9620F9447DDEE4B51F7A7CFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TnCase/Pods-TnCase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TnCase/Pods-TnCase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TnCase/Pods-TnCase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3BDAE74EA097E1DB597DF12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TnCase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22F0DE20275FF93800EB1497 /* Sources */ = {
@@ -292,6 +361,7 @@
 		};
 		22F0DE39275FF93A00EB1497 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 534561FA50305A96D641242E /* Pods-TnCase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,6 +390,7 @@
 		};
 		22F0DE3A275FF93A00EB1497 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 367B5DE367CFB7669A0DF3C2 /* Pods-TnCase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
