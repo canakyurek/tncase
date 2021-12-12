@@ -9,7 +9,8 @@
 import Foundation
 
 enum MovieService {
-    case popular()
+    case popular
+    case image(String)
 }
 
 extension MovieService: Service {
@@ -24,38 +25,44 @@ extension MovieService: Service {
     
     var scheme: String {
         switch self {
-        case .popular()
+        case .popular, .image:
             return "https"
         }
     }
     
     var host: String {
         switch self {
-        case .popular()
-            return "developers.themoviedb.org/3/tv/"
+        case .popular:
+            return "api.themoviedb.org"
+        case .image:
+            return "image.tmdb.org"
         }
     }
     
     var path: String {
         switch self {
-        case .popular()
-            return "get-popular-tv-shows"
+        case .popular:
+            return "/3/tv/popular"
+        case .image(let imageId):
+            return "/t/p/w500/\(imageId)"
+        }
     }
     
     var parameters: [String: Any]? {
-        // For 3rd version
-        
         switch self {
-        case .popular()
+        case .popular:
             return [
                 "api_key" : apiKey,
                 "language" : "en_US",
             ]
+        case .image:
+            return [:]
+        }
     }
     
     var method: ServiceMethod {
         switch self {
-        case .popular()
+        case .popular, .image:
             return .get
         }
     }
