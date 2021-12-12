@@ -28,6 +28,7 @@ class ServiceProvider<T: Service> {
             switch result {
             case .success(let data):
                 let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
                     let resp = try decoder.decode(decodeType, from: data)
                     completion(.success(resp))
