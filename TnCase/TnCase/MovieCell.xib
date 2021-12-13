@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieCell" rowHeight="91" id="AZ3-7b-7XU" customClass="MovieCell" customModule="TnCase" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AZ3-7b-7XU" id="Bt9-NN-zfi">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vrg-q9-b3j">
+                        <rect key="frame" x="20" y="12" width="290" height="68"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNo-gg-av8">
+                        <rect key="frame" x="333" y="11" width="61" height="68"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="61" id="dWc-Iu-dHU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="lNo-gg-av8" firstAttribute="top" secondItem="Bt9-NN-zfi" secondAttribute="top" constant="11" id="0Ad-RH-fJN"/>
+                    <constraint firstAttribute="bottom" secondItem="lNo-gg-av8" secondAttribute="bottom" constant="12" id="AZ6-Fp-6fT"/>
+                    <constraint firstAttribute="trailing" secondItem="lNo-gg-av8" secondAttribute="trailing" constant="20" id="FK5-wE-DYR"/>
+                    <constraint firstItem="lNo-gg-av8" firstAttribute="leading" secondItem="Vrg-q9-b3j" secondAttribute="trailing" constant="23" id="XW3-qY-aGV"/>
+                    <constraint firstItem="Vrg-q9-b3j" firstAttribute="top" secondItem="Bt9-NN-zfi" secondAttribute="top" constant="12" id="des-1E-PjE"/>
+                    <constraint firstAttribute="bottom" secondItem="Vrg-q9-b3j" secondAttribute="bottom" constant="11" id="ihT-SG-ZfI"/>
+                    <constraint firstItem="Vrg-q9-b3j" firstAttribute="leading" secondItem="Bt9-NN-zfi" secondAttribute="leading" constant="20" symbolic="YES" id="tr2-eZ-9nc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="nameLabel" destination="Vrg-q9-b3j" id="iUh-M6-wNg"/>
+                <outlet property="voteAverageLabel" destination="lNo-gg-av8" id="k1y-lP-cYK"/>
+            </connections>
+            <point key="canvasLocation" x="102.89855072463769" y="-5.6919642857142856"/>
+        </tableViewCell>
+    </objects>
+</document>
