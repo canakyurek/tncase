@@ -74,6 +74,9 @@ class HomeViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segue" {
+            if let destination = segue.destination as? DetailViewController,
+                let viewModel = sender as? DetailViewModel {
+                destination.viewModel = viewModel
             }
         }
     }
