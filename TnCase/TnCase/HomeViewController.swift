@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class HomeViewController: UIViewController {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Outlet connections
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Variables
     
     lazy var viewModel = {
         return MovieViewModel()
-    }
+    }()
+    
     var movies = PublishSubject<[Movie]>()
     
     let disposeBag = DisposeBag()
@@ -24,12 +31,13 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         setupCollectionView()
+        tableView.register(MovieCell.nib, forCellReuseIdentifier: MovieCell.identifier)
         setupBindings()
         viewModel.fetchMovies()
     }
     
     // MARK: - Custom methods
-        collectionView.dataSource = self
+    
     func setupBindings() {
         viewModel
             .error
@@ -58,8 +66,10 @@ class HomeViewController: UIViewController {
         }
         .disposed(by: disposeBag)
         
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        tableView.rx.modelSelected(Movie.self).subscribe(onNext: { [unowned self] movie in
+            let detailViewModel = DetailViewModel(movie: movie)
+            performSegue(withIdentifier: "segue", sender: detailViewModel)
+        }).disposed(by: disposeBag)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
