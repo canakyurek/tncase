@@ -30,7 +30,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionView()
+        title = "Popular TV Shows"
         tableView.register(MovieCell.nib, forCellReuseIdentifier: MovieCell.identifier)
         setupBindings()
         viewModel.fetchMovies()
@@ -72,13 +72,9 @@ class HomeViewController: UIViewController {
         }).disposed(by: disposeBag)
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
-    }
-}
-
-extension HomeViewController: UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue" {
+            }
+        }
     }
 }
