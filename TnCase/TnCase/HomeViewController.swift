@@ -14,26 +14,50 @@ class HomeViewController: UIViewController {
     lazy var viewModel = {
         return MovieViewModel()
     }
+    var movies = PublishSubject<[Movie]>()
+    
+    let disposeBag = DisposeBag()
+    
+    // MARK: - Lifecycle methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
+        setupBindings()
+        viewModel.fetchMovies()
     }
     
-    func setupCollectionView() {
+    // MARK: - Custom methods
         collectionView.dataSource = self
-        collectionView.delegate = self
-    }
+    func setupBindings() {
+        viewModel
+            .error
+            .observe(on: MainScheduler.instance)
+            .subscribe (onNext: { error in
+                switch error {
+                case .serverError(let message):
+                    print(message)
+                case .emptyResponseError(let message):
+                    print(message)
+                }
+            })
+            .disposed(by: disposeBag)
 
 
-}
-
-extension HomeViewController: UICollectionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-    
+        viewModel
+            .movies
+            .observe(on: MainScheduler.instance)
+            .bind(to: movies)
+            .disposed(by: disposeBag)
+        
+        movies
+            .bind(to: tableView.rx.items(cellIdentifier: MovieCell.identifier, cellType: MovieCell.self)) { (row, movie, cell) in
+            let cellViewModel = MovieCellViewModel(movie: movie)
+            cell.configure(cellViewModel)
+        }
+        .disposed(by: disposeBag)
+        
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 2
     }
