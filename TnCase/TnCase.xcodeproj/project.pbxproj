@@ -68,6 +68,112 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		220C256027673D0900E08CEC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				220C256127673D0F00E08CEC /* Controller */,
+				220C256227673D1500E08CEC /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		220C256127673D0F00E08CEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22F0DE2B275FF93800EB1497 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		220C256227673D1500E08CEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22F0DE3B275FFA3900EB1497 /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		220C256327673D2A00E08CEC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22222B67276145D100491D7E /* BaseMovie.swift */,
+				22222B69276145F900491D7E /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		220C256427673D3900E08CEC /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				220C256527673D3F00E08CEC /* Controller */,
+				220C256627673D4400E08CEC /* ViewModel */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		220C256527673D3F00E08CEC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				221BFC2327664C3200B77080 /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		220C256627673D4400E08CEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				221BFC2527664C3F00B77080 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		220C256727673D4F00E08CEC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				221BFC272766604E00B77080 /* Reusable.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		220C256827673D6900E08CEC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				220C256327673D2A00E08CEC /* Model */,
+				220C256927673D8C00E08CEC /* View */,
+				220C256A27673D9100E08CEC /* ViewModel */,
+				220F1A5B2766974C005B49DA /* MovieError.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		220C256927673D8C00E08CEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22222B712761545D00491D7E /* MovieCell.swift */,
+				22222B7527615B6000491D7E /* MovieCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		220C256A27673D9100E08CEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22222B732761547100491D7E /* MovieCellViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		220C256B27673DA400E08CEC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				22F0DE35275FF93A00EB1497 /* Info.plist */,
+				22F0DE2D275FF93800EB1497 /* Main.storyboard */,
+				22F0DE30275FF93A00EB1497 /* Assets.xcassets */,
+				22F0DE32275FF93A00EB1497 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		220F1A5A27669582005B49DA /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,21 +208,11 @@
 				22F0DE27275FF93800EB1497 /* AppDelegate.swift */,
 				22F0DE29275FF93800EB1497 /* SceneDelegate.swift */,
 				220F1A5A27669582005B49DA /* Network */,
-				22F0DE2B275FF93800EB1497 /* HomeViewController.swift */,
-				22F0DE2D275FF93800EB1497 /* Main.storyboard */,
-				22F0DE30275FF93A00EB1497 /* Assets.xcassets */,
-				22F0DE32275FF93A00EB1497 /* LaunchScreen.storyboard */,
-				22F0DE35275FF93A00EB1497 /* Info.plist */,
-				22F0DE3B275FFA3900EB1497 /* MovieViewModel.swift */,
-				22222B67276145D100491D7E /* BaseMovie.swift */,
-				22222B69276145F900491D7E /* Movie.swift */,
-				22222B712761545D00491D7E /* MovieCell.swift */,
-				22222B732761547100491D7E /* MovieCellViewModel.swift */,
-				22222B7527615B6000491D7E /* MovieCell.xib */,
-				221BFC2327664C3200B77080 /* DetailViewController.swift */,
-				221BFC2527664C3F00B77080 /* DetailViewModel.swift */,
-				221BFC272766604E00B77080 /* Reusable.swift */,
-				220F1A5B2766974C005B49DA /* MovieError.swift */,
+				220C256B27673DA400E08CEC /* Resources */,
+				220C256027673D0900E08CEC /* Home */,
+				220C256427673D3900E08CEC /* Detail */,
+				220C256827673D6900E08CEC /* Common */,
+				220C256727673D4F00E08CEC /* Utilities */,
 			);
 			path = TnCase;
 			sourceTree = "<group>";
@@ -420,7 +516,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4DJDR44T6V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TnCase/Info.plist;
+				INFOPLIST_FILE = TnCase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -449,7 +545,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4DJDR44T6V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TnCase/Info.plist;
+				INFOPLIST_FILE = TnCase/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
